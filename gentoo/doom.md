@@ -44,7 +44,7 @@ Force use of `Proton-5.4-GE-3` or later.
 
 ### Sources
 
-[Doom Eternal Linux](https://www.christitus.com/doom-eternal-linux)
-[CTT - Doom Eternal on Linux | How to Setup and Game Performance](https://www.youtube.com/watch?v=g3UPxd8iUsU&t=1s)
-[TLG - Here are 3 EASY STEPS to play DOOM ETERNAL on Linux!](https://www.youtube.com/watch?v=u2_Eoqekr9o)
-[krypalkora - Proton 5.4-GE-2 Steam Linux Doom Eternal](https://www.youtube.com/watch?v=cwhoIZcFXLs)
+* [Doom Eternal Linux](https://www.christitus.com/doom-eternal-linux)
+* [CTT - Doom Eternal on Linux - How to Setup and Game Performance](https://www.youtube.com/watch?v=g3UPxd8iUsU&t=1s)
+* [TLG - Here are 3 EASY STEPS to play DOOM ETERNAL on Linux!](https://www.youtube.com/watch?v=u2_Eoqekr9o)
+* [krypalkora - Proton 5.4-GE-2 Steam Linux Doom Eternal](https://www.youtube.com/watch?v=cwhoIZcFXLs)
