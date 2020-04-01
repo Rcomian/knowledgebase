@@ -3,24 +3,34 @@
 ![Minecraft Splash](res/minecraft-splash.png)
 
 
-### Ensure JRE is installed
+### Ensure Java JRE is installed
 
 ```bash
+# As root
 emerge -av oracle-jre-bin
+
+# Fails - follow download instructions below
+
+mv -v /home/dragon/Downloads/jre* /var/cache/distfiles/
+chown root:root -R /var/cache/distfiles
+
+emerge -av oracle-jre-bin
+
+eselect java-vm set system oracle-jre-bin-1.8
+
+# As user
+eselect java-vm set user oracle-jre-bin-1.8
 ```
 
-Follow instructions to download the correct version from oracle at:
+Follow instructions to download the correct version from oracle.
+
+__Ensure you download the JRE not the JDK - it's the second set of downloads on the page__
+
 [Java SE Runtime Environment 8 Downloads](https://www.oracle.com/java/technologies/javase-jre8-downloads.html)
 
 [Java SE 8 Archive Downloads](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
 
 Finish install.
-
-As user:
-
-```bash
-eselect java-vm set user oracle-jre-bin-1.8
-```
 
 ### Get launcher
 
@@ -28,7 +38,7 @@ eselect java-vm set user oracle-jre-bin-1.8
 
 Unzip to Applications folder.
 
-Run with 
+Run with
 
 ```bash
 ~/Applications/minecraft-launcher/minecraft-launcher
