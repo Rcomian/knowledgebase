@@ -55,4 +55,4 @@ BIOS Setup
 
 ### Other stuff
 
-[DOOM Eternal](gentoo/doom.md)
+[DOOM Eternal](doom.md)
