@@ -41,14 +41,18 @@ Unzip to Applications folder.
 Run with
 
 ```bash
+mkdir -p ~/Applications
+rm -Rfv ~/Applications/minecraft-launcher
+wget https://launcher.mojang.com/download/Minecraft.tar.gz -O ~/Applications/minecraft-launcher.tar.gz
+tar xvf Applications/minecraft-launcher.tar.gz -C ~/Applications/
+wget https://rcomian.github.io/knowledgebase/gentoo/res/minecraft-icon.png -O ~/Applications/minecraft-icon.png
+
 ~/Applications/minecraft-launcher/minecraft-launcher
 ```
 
-### Create system launcher
-
-Download icon into applications folder:
-
 ![Minecraft icon](res/minecraft-icon.png)
+
+### Create system launcher
 
 Create the following text file:
 
