@@ -7,4 +7,3 @@ To the pain
 [DOOM Eternal](gentoo/doom.md)
 
 [Minecraft](gentoo/minecraft.md)
-

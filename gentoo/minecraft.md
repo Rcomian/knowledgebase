@@ -1,3 +1,5 @@
+[Home](/index.md)
+
 ## Minecraft on Gentoo
 
 ![Minecraft Splash](res/minecraft-splash.png)

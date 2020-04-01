@@ -1,3 +1,5 @@
+[Home](/index.md)
+
 ## Gentoo
 
 ![Gentoo Site Logo](res/gentoo-site-logo.png)
@@ -6,7 +8,7 @@
 
 Source: https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base
 
-```
+```bash
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 
 mount --types proc /proc /mnt/gentoo/proc
@@ -30,7 +32,7 @@ export PS1="(chroot) ${PS1}"
 
 Source: https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Bootloader
 
-```
+```bash
 exit
 
 umount -l /mnt/gentoo/dev{/shm,/pts,}
@@ -40,7 +42,7 @@ umount -R /mnt/gentoo
 
 ### Booting from UEFI
 
-```
+```bash
 mount -o remount,rw /sys/firmware/efi/efivars
 grub-install --target=x86_64-efi --efi-directory=/boot --removable
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -54,4 +56,3 @@ BIOS Setup
   --> Advanced Processor Options
     --> SVM Mode (Enabled)
 ```
-

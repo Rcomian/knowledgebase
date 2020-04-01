@@ -1,3 +1,5 @@
+[Home](/index.md)
+
 ## DOOM Eternal on gentoo
 
 ![Doom eternal splash](res/doom-splash.png)
