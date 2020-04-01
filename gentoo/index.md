@@ -53,3 +53,6 @@ BIOS Setup
     --> SVM Mode (Enabled)
 ```
 
+### Other stuff
+
+[DOOM Eternal](gentoo/doom.md)
