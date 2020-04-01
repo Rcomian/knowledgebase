@@ -1,5 +1,7 @@
 ## Gentoo
 
+![Gentoo Site Logo](res/gentoo-site-logo.png)
+
 ### Chrooting
 
 Source: https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base
