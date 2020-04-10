@@ -2,6 +2,8 @@
 
 To the pain
 
+[Bash](gentoo/bash.md)
+
 [Gentoo](gentoo/index.md)
 
 [DOOM Eternal](gentoo/doom.md)
