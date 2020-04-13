@@ -56,3 +56,63 @@ BIOS Setup
   --> Advanced Processor Options
     --> SVM Mode (Enabled)
 ```
+
+### Emoji fonts for gentoo
+
+From: https://www.christitus.com/emoji
+
+```bash
+emerge -av noto-emoji
+```
+
+`/etc/fonts/conf.d/02-emoji.conf`:
+
+```xml
+<?xml version="1.0"?>
+  <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+  <fontconfig>
+
+   <alias>
+     <family>sans-serif</family>
+     <prefer>
+       <family>DejaVu Sans</family>
+       <family>Noto Color Emoji</family>
+       <family>Noto Emoji</family>
+     </prefer> 
+   </alias>
+
+   <alias>
+     <family>serif</family>
+     <prefer>
+       <family>DejaVu Serif</family>
+       <family>Noto Color Emoji</family>
+       <family>Noto Emoji</family>
+     </prefer>
+   </alias>
+
+   <alias>
+    <family>monospace</family>
+    <prefer>
+      <family>Nimbus Mono L</family>
+      <family>Noto Color Emoji</family>
+      <family>Noto Emoji</family>
+     </prefer>
+   </alias>
+
+  </fontconfig>
+
+```
+
+`~/.config/fontconfig/conf.d/01-emoji.conf`:
+
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <!-- Use Google Emojis -->
+  <match target="pattern">
+    <test qual="any" name="family"><string>Segoe UI Emoji</string></test>
+    <edit name="family" mode="assign" binding="same"><string>Noto Color Emoji</string></edit>
+  </match>
+</fontconfig>
+```
