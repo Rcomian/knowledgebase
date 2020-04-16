@@ -4,6 +4,19 @@
 
 ![bash splash](res/bash-splash.png)
 
+### Bash prerunner
+
+Sources: 
+
+* [Add the following after shebang to catch and avoid unwanted errors/side effects](https://twitter.com/nixcraft/status/1250480524872658946)
+* [What is the difference between “#!/usr/bin/env bash” and “#!/usr/bin/bash”?
+](https://stackoverflow.com/a/16365367)
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+```
+
 ### Replace text in a file with a unix style path
 
 ```bash
