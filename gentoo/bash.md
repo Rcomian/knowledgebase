@@ -20,10 +20,10 @@ set -euo pipefail
 ### Replace text in a file with a unix style path
 
 ```bash
-find='@PLACEHOLDER@'
-replace=`pwd` #replace is the text to be inserted
+FIND='@PLACEHOLDER@'
+REPLACE=`pwd` #replace is the text to be inserted
 
-sed -i "s/${PLACEHOLDER}/${cwd//\//\\\/}/g" targetfile.conf
+sed -i "s/${FIND}/${REPLACE}//\//\\\/}/g" targetfile.conf
 ```
 
 ### Exit the script if the previous command failed
