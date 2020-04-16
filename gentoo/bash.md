@@ -9,12 +9,15 @@
 Sources: 
 
 * [Add the following after shebang to catch and avoid unwanted errors/side effects](https://twitter.com/nixcraft/status/1250480524872658946)
+  * [Reply from @lowkey303](https://twitter.com/lowkey303/status/1250483443936485376)
 * [What is the difference between “#!/usr/bin/env bash” and “#!/usr/bin/bash”?
 ](https://stackoverflow.com/a/16365367)
 
 ```bash
 #!/usr/bin/env bash
 set -euo pipefail
+set -o errtrace
+shopt -s inherit_errexit
 ```
 
 ### Replace text in a file with a unix style path
