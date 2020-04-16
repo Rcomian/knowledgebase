@@ -23,7 +23,7 @@ set -euo pipefail
 FIND='@PLACEHOLDER@'
 REPLACE=`pwd` #replace is the text to be inserted
 
-sed -i "s/${FIND}/${REPLACE}//\//\\\/}/g" targetfile.conf
+sed -i "s/${FIND}/${REPLACE//\//\\\/}/g" targetfile.conf
 ```
 
 ### Exit the script if the previous command failed
