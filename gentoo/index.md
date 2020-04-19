@@ -40,6 +40,13 @@ umount -R /mnt/gentoo
 
 ```
 
+### Mounting a directory over another directory
+
+```bash
+mkdir -p /mnt/target
+mount --bind /mnt/source /mnt/target
+```
+
 ### Booting from UEFI
 
 ```bash
