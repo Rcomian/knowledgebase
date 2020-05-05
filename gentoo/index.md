@@ -64,6 +64,24 @@ BIOS Setup
     --> SVM Mode (Enabled)
 ```
 
+### Installing 9999 packages (from git)
+
+Installing keywordless packages, which are normally straight checkouts from git.
+
+If you don't get this right you get an error like:
+
+```bash
+- media-video/v4l2loopback-9999::gentoo (masked by: missing keyword)
+```
+
+To unmask it properly, use `**` as the keyword, like:
+
+``` bash
+echo =media-video/v4l2loopback-9999 \*\* >/etc/portage/package.accept_keywords/v4l2loopback9999
+```
+
+You want two asterisks `**` in the kewords file, but to add them from the commandline you must escape them.
+
 ### Emoji fonts for gentoo
 
 From: https://www.christitus.com/emoji
