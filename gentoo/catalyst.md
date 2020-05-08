@@ -1,3 +1,5 @@
+[Home](../index.md)
+
 ## Catalyst
 
 ![Build by SBTS from the Noun Project](res/catalyst-splash.png)
