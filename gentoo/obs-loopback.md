@@ -100,4 +100,6 @@ In your video confecing app of choice you can now select `OBS Cam` as an option,
 
 ![OBS as a Virtual Camera](res/obs-loopback-select.png)
 
-Note: I have not yet managed to get this working in SkypeForLinux however it works fine for Jitsi.
+For Skype & Microsoft Teams, they limit their output to 1280x720, so you need to scale the actual output like so:
+
+![OBS skype settings](res/obs-loopback-skypesettings.png)
