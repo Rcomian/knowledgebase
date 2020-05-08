@@ -9,3 +9,5 @@ To the pain
 [DOOM Eternal](gentoo/doom.md)
 
 [Minecraft](gentoo/minecraft.md)
+
+[OBS as a video source](gentoo/obs-loopback.md)
