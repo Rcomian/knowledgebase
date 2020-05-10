@@ -103,3 +103,11 @@ In your video confecing app of choice you can now select `OBS Cam` as an option,
 For Skype & Microsoft Teams, they limit their output to 1280x720, so you need to scale the actual output like so:
 
 ![OBS skype settings](res/obs-loopback-skypesettings.png)
+
+#### Logitech C920 Webcam with Linux OBS
+
+There's an issue with OBS using the C920 HD Webcam with linux OBS capture source `Video Capture Device (V4L2)`, by default it offers Video Format `YUYV 4:2:2` as the only native format. Other formats are marked as `(Emulated)`. However, in its native format at 1920x1080, the framerate is limited to 5fps, which is awful.
+
+The camera is perfectly capable of 30fps in 1920x1080 mode. To enable this in OBS choose any of the emulated formats, eg: `BGR3 (Emulated)`. If this doesn't immediately fix the framerate you can choose the full 30fps framerate from the menu below.
+
+![OBS settings for C920 at 30fps](res/obs-loopback-c920.png)
