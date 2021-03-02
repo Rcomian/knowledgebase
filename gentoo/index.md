@@ -144,5 +144,5 @@ emerge -av noto-emoji
 
 ### Troubleshooting
 
-[Murmur - Mumble server](/gentoo/mumbleserver.md)
+[Murmur - Mumble server](mumbleserver.md)
 
