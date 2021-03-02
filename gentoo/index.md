@@ -141,3 +141,8 @@ emerge -av noto-emoji
   </match>
 </fontconfig>
 ```
+
+### Troubleshooting
+
+[Murmur - Mumble server](/gentoo/mumbleserver.md)
+

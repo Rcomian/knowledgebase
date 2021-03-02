@@ -11,3 +11,5 @@ To the pain
 [Minecraft](gentoo/minecraft.md)
 
 [OBS as a video source](gentoo/obs-loopback.md)
+
+[Nihilism](nihilism/index.md)

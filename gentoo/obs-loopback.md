@@ -111,3 +111,90 @@ There's an issue with OBS using the C920 HD Webcam with linux OBS capture source
 The camera is perfectly capable of 30fps in 1920x1080 mode. To enable this in OBS choose any of the emulated formats, eg: `BGR3 (Emulated)`. If this doesn't immediately fix the framerate you can choose the full 30fps framerate from the menu below.
 
 ![OBS settings for C920 at 30fps](res/obs-loopback-c920.png)
+
+#### Audio - pulseaudio routing
+
+Similarly to setting up a video loopback device, we can have an audio loopback device.
+
+Sources:
+
+* https://sysplay.in/blog/linux/2019/06/playing-with-alsa-loopback-devices/
+* https://wiki.archlinux.org/index.php/PulseAudio/Examples
+* https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/
+
+##### Mixer device
+
+We can setup a virtual mixer device that receives inputs from various sources:
+
+```bash
+pactl load-module module-null-sink sink_name=virt_internal_mixer     sink_properties=device.description=virt_internal_mixer >>./.pamodules
+```
+
+##### Optional channels
+
+You can also setup a number of sink devices that applications can play sounds to, eg:
+
+```bash
+pactl load-module module-null-sink sink_name=virt_playback_ch1     sink_properties=device.description=virt_playback_ch1 >>./.pamodules
+pactl load-module module-null-sink sink_name=virt_playback_ch2     sink_properties=device.description=virt_playback_ch2 >>./.pamodules
+```
+
+We need to link the channels to the mixer with a pulseadio loopback device:
+
+```bash
+pactl load-module module-loopback latency_msec=5 adjust_time=3 source=virt_playback_ch1.monitor sink=virt_internal_mixer >>./.pamodules
+pactl load-module module-loopback latency_msec=5 adjust_time=3 source=virt_playback_ch2.monitor sink=virt_internal_mixer >>./.pamodules
+```
+
+##### Virtual microphone for chat apps
+
+We can set up a virtual microphone which can be used by chat applications like Skype, Jitsi and Zoom to transmit the mixed audio to the chatroom.
+
+```bash
+pactl load-module module-remap-source master=virt_internal_mixer.monitor master_channel_map=front-left,front-right channel_map=front-right,front-left source_name=virt_broadcast_mic source_properties=device.description=virt_broadcast_mic >>./.pamodules
+```
+
+##### Monitoring output
+
+We won't hear our own audio unless we send our mixed audio to a device for monitoring with something like:
+
+```bash
+pactl load-module module-loopback latency_msec=5 adjust_time=3 source=virt_internal_mixer.monitor sink=${monitorspeakers} >>./.pamodules
+```
+
+We can find the sources to monitor with using:
+
+```bash
+pacmd list-sinks | grep -e 'index:' -e device.string -e 'name:'
+```
+
+##### Include alsa sources
+
+We can bring in `alsa` sources using the alsa loopback kernel module `snd-aloop`. Remember to modprobe this first if it's not built-in to the kernel.
+
+Configure the kernel setting in:
+
+* Device Drivers
+  * Sound card support
+    * Advanced Linux Sound Architecture
+      * Generic sound devices
+        * Generic loopback driver (PCM) = (* or M)
+
+We can now make a loopback device between the alsa loopback device and one of the channels, or perhaps directly to the mixer, with something like:
+
+```bash
+pactl load-module module-loopback latency_msec=5 adjust_time=3 source=${alsa}          sink=virt_playback_ch1 >>./.pamodules
+```
+
+You can find your alsa loopback device by listing the pulseaudio sources:
+
+```bash
+pacmd list-sources | grep -e 'index:' -e device.string -e 'name:'
+```
+
+At this point we can set VCV or similar audio software to output to the alsa loopback 1 device (not 0). This will then get routed into our mixed audio as we want.
+
+##### Setup OBS
+
+Now we can use OBS to output to the mixer device or one of the channels. That way broadcast audio can go along with the video.
+
