@@ -4,6 +4,12 @@
 
 ![Gentoo Site Logo](res/gentoo-site-logo.png)
 
+### Troubleshooting
+
+[Murmur - Mumble server](mumbleserver.md)
+
+[FileCloud Sync](filecloudsync.md)
+
 ### Chrooting
 
 Source: https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base
@@ -141,8 +147,4 @@ emerge -av noto-emoji
   </match>
 </fontconfig>
 ```
-
-### Troubleshooting
-
-[Murmur - Mumble server](mumbleserver.md)
 
