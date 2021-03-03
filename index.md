@@ -12,4 +12,4 @@ To the pain
 
 [OBS as a video source](gentoo/obs-loopback.md)
 
-[Nihilism](nihilism/index.md)
+<!-- [Nihilism](nihilism/index.md) -->
