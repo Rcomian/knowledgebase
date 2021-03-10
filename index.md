@@ -12,4 +12,6 @@ To the pain
 
 [OBS as a video source](gentoo/obs-loopback.md)
 
+[SQL Server](sql/index.md)
+
 <!-- [Nihilism](nihilism/index.md) -->
