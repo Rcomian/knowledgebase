@@ -8,6 +8,7 @@ Virtual Machine Passthrough - QEMU/KVM
 This enables hosted VMs to themselves host VMs. This is needed for linux docker or WSL on windows VMs.
 
 My kernel was set up like this:
+
 ![Screenshot showing the kernel configuration having an asterix next to the 3 options for KVM, KVM Intel and KVM AMD](res/Screenshot_20210625_171546.png)
 
 ```
