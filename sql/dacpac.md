@@ -64,6 +64,8 @@ Imagine, for example, that the user needs to have their password changed. We can
 
 The final issue with this is that it doesn't seem to work if you have a user shared between 2 DACPACs. This isn't a normal use case, but if you want to deploy two instances of the DACPAC on the server, for example, it would be. What happens is that the second deployment succeeds, but the user isn't added to the database. If you add them manually the database gets marked as "Changed" on upgrade.
 
+This is also an issue if you try to ignore user management entirely. You then need to add your service user to the database after deployment. When upgrading, you get the "This database has changed" warning because of the user being added - then the user gets removed and nothing works until you remember to add the user back again.
+
 So lets try to fix the issues we can.
 
 ### Use a role
@@ -105,7 +107,7 @@ Don't forget to add the `GO` after procedure definition. Without that, the GRANT
 
 I haven't yet found a way to do this nicely. However this way works. The one compromise is that the login must be added to the server security tab before the DACPAC is deployed.
 
-What we do is make use of the post deployment scripts. This does make the upgrade come with a warning, but I think it's a better warning than "This database changed" which means investigation should be required.
+What we do is make use of the post deployment scripts. This makes the upgrade come with a warning, but I think it's a better warning than "This database changed" which means investigation should be required.
 
 The post deployment script looks like the following:
 

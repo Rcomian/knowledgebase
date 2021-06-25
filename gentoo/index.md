@@ -10,6 +10,8 @@
 
 [FileCloud Sync](filecloudsync.md)
 
+[KVM Virtualisation passthrough](virt-passthrough.md)
+
 ### Chrooting
 
 Source: https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base
