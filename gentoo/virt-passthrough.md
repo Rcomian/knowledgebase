@@ -34,7 +34,7 @@ cat /sys/module/kvm_amd/parameters/nested
 
 If they return `1`(amd) or `Y`(intel) then it's good to go. `0`(amd) or `N`(intel) mean that this configuration hasn't worked.
 
-Once that's in place you need to enable svm|vmx on the virtual machine. This is done by editing the cpu configuration xml like this:
+Once that's in place you need to enable `svm|vmx` on the virtual machine. This is done by editing the cpu configuration xml like this:
 
 ![Screenshot showing qemu xml config of a kvm virtual machine where teh cpu has the svm feature enabled](res/Screenshot_20210625_173029.png)
 
